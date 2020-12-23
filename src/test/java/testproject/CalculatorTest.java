@@ -14,4 +14,14 @@ public class CalculatorTest {
     public void testSubtract() {
         assertThat(Calculator.subtract(3,2)).isEqualTo(1);
     }
+
+    @Test
+    public void testReset() {
+        Aggregator agr = new Aggregator();
+        double val = 7;
+        agr.addValue(val);
+        assertThat(agr.getSum()).isEqualTo(7);
+        agr.reset();
+        assertThat(agr.getSum()).isEqualTo(0);
+    }
 }
